@@ -347,11 +347,7 @@ function doubleMoney(){
 }
 
 function sortMoney(){
-
-    data.sort((a, b) => {
-       return b.money > a.money
-    })
-
+    data.sort((a, b) => b.money - a.money); // Correct comparison
     updateDom();
 }
 
