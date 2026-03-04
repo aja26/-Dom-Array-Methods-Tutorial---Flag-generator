@@ -350,11 +350,8 @@ function sortMoney(){
 // filter only millionares
 
 function showMillionaires(){
-   data = data.filter(mills => {
-    return mills.money > 1000000;
-   })
-
-   updateDom();
+   const millionaires = data.filter(user => user.money > 1000000);
+   updateDom(millionaires);
 }
 
 // total wealth
