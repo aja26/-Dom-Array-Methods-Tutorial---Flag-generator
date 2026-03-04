@@ -314,7 +314,7 @@ function updateDom(processedData = data){
        
        element.classList.add('person');
       
-       element.innerHTML = `<strong><span>${getFlagEmoji(countryArrKeys[IDX])}</span>${item.name}</strong> <span>${formatMoney(item.money)}</span>`;
+       element.innerHTML = `<strong><span>${getFlagEmoji(countryArrKeys[IDX])} </span>${item.name}</strong> <span>${formatMoney(item.money)}</span>`;
       
        main.appendChild(element);
             
