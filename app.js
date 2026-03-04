@@ -259,13 +259,12 @@ const countryList = {
     "AX": "Åland Islands"
 };
 
+const countryArrNames = Object.values(countryList);
+const countryArrKeys = Object.keys(countryList);
 
 getRandomUser();
 getRandomUser();
 getRandomUser();
-
-
-
 
 
 // Fetch random user and add money
@@ -277,7 +276,7 @@ async function getRandomUser(){
     //console.log(user);
 
     const newUser = {
-        name: ` ${user.name.first} ${user.name.last}`,
+        name: `${user.name.first} ${user.name.last}`,
         money: Math.floor(Math.random() * 1000000),
         location: `${user.location.country}`
     };
@@ -308,9 +307,6 @@ function updateDom(processedData = data){
    processedData.forEach((item) => {
        
        const element = document.createElement('div');
-
-       const countryArrNames = Object.values(countryList);
-       const countryArrKeys = Object.keys(countryList);
   
         if(countryArrNames.includes(item.location)){
             const IDX = countryArrNames.indexOf(item.location);
