@@ -358,16 +358,13 @@ function showMillionaires(){
 
 // third parameter ***0**** is important and is 100% needed to do this properly!
 function totalWealth(){
+    const wealth = data.reduce((sum, user) => sum + user.money, 0);
 
-    const wealth = data.reduce((a, b) => (a += b.money),0);
-    console.log(formatMoney(wealth));
-
+    updateDom(); // reset UI
 
     const wealthEl = document.createElement('div');
-    wealthEl.innerHTML = `<h3>Total Wealth:<strong>${formatMoney(wealth)}</strong></h3>`;
-
+    wealthEl.innerHTML = `<h3>Total Wealth: <strong>${formatMoney(wealth)}</strong></h3>`;
     main.appendChild(wealthEl);
-   
 }
 
 
